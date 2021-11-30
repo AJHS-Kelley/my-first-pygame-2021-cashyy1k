@@ -18,3 +18,11 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 JAVO = (0, 255, 255)
 
+# Setup fonts.
+basicFont = pygame.font.SysFont(None, 48)
+
+# Setup Text
+text = basicFont.render('Hello, world!', True, WHITE, BLUE)
+textRect = text.get_rect()
+textRect.centerx = windowSurface.get_rect().centerx
+textRect.centerx = windowSurface.get_rect().centery
