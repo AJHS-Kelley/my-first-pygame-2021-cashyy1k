@@ -26,3 +26,6 @@ text = basicFont.render('Hello, world!', True, WHITE, BLUE)
 textRect = text.get_rect()
 textRect.centerx = windowSurface.get_rect().centerx
 textRect.centerx = windowSurface.get_rect().centery
+
+# Draw the game background
+windowSurface.fill(JAVO)
