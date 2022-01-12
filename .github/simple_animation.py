@@ -57,3 +57,29 @@ while True:
         if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top -= MOVESPEED
+
+        if b['rect'].top < 0:
+            # The box has moved past the top.
+            if b['dir'] == UPLEFT:
+                b['dir'] = DOWNLEFT
+            if b['dir'] == UPRIGHT:
+                b['dir'] = DOWNRIGHT
+            if b['rect'].bottom > WINDOWHEIGHT:
+                # The box has moved past the bottom.
+                if b['dir'] == DOWNLEFT:
+                    b['dir'] = UPLEFT
+                if b['dir'] == DOWNRIGHT:
+                    b['dir'] = UPRIGHT
+                if b['rect'].left < 0:
+                    # The box has moved past the left.
+                    if b['dir'] == DOWNLEFT:
+                        b['dir'] = UPLEFT
+                    if b['dir'] == DOWNRIGHT:
+                        b['dir'] = UPRIGHT
+                if b['rect'].right > WINDOWWITDH:
+                    # The box has moved past the right.
+                    if b['dir'] == DOWNRIGHT:
+                        b['dir'] = DOWNLEFT
+                    if b['dir'] == UPRIGHT:
+                        b['dir'] = UPLEFT
+                        
