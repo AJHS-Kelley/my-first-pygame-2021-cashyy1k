@@ -1,6 +1,5 @@
 # Simple Animation with PyGame, Anthony Furlow, 1/4/22, 2:34 pm, v0.0
 
-from PyGamePractice import GREEN
 import pygame, sys, time
 from pygame.locals import *
 
@@ -10,7 +9,7 @@ pygame.init()
 # Setup the Window
 WINDOWWITH = 400
 WINDOWHEIGHT = 400
-windowSurface = = pygame.display.set_mode((WINDOWWITH, WINDOWHEIGHT), 0, 32)
+windowSurface = pygame.display.set_mode((WINDOWWITH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Animation Example!')
 
 #Setup
@@ -76,7 +75,7 @@ while True:
                     b['dir'] = UPLEFT
                 if b['dir'] == DOWNRIGHT:
                     b['dir'] = UPRIGHT
-            if b['rect'].right > WINDOWWITDH:
+        if b['rect'].right > WINDOWWIDTH:
                 # The box has moved past the right.
                 if b['dir'] == DOWNRIGHT:
                     b['dir'] = DOWNLEFT
@@ -84,7 +83,7 @@ while True:
                     b['dir'] = UPLEFT
 
             # Draw the box onto the game surface.
-            pygame.draw.rect(windowSurface, b['color'], b['rect'])
+        pygame.draw.rect(windowSurface, b['color'], b['rect'])
 
         # Draw the window to the screen.
         pygame.display.update()        
